@@ -8,8 +8,8 @@ cd $repository_name
 day_counter=1
 while [ $day_counter -le $commits_number ]
 do
-    delta="-"$day_counter"d"
-    date=$(date -v $delta)
+    delta=$day_counter"d"
+    date=$(date -d "$delta")
     num=$(( RANDOM % 4 ))
     for ((n=0;n<num;n++)); do 
         echo "$date:$commit_message" >> history.txt
